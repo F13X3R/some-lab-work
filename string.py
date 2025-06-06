@@ -5,13 +5,9 @@
 
 #define MAX_STRING_LENGTH 1000
 #define MAX_SUBSTRINGS 100
-
-// Функция для проверки, является ли символ латинской буквой, цифрой или пробелом
 int is_latin_digit_or_space(char c) {
     return (isalnum(c) || c == ' ');
 }
-
-// Функция для выделения подстрок, содержащих только латинские буквы, цифры и пробелы
 void extract_substrings(char *str, char **substrings, int *substrings_count) {
     int i = 0, j = 0;
     *substrings_count = 0;
@@ -34,8 +30,6 @@ void extract_substrings(char *str, char **substrings, int *substrings_count) {
         (*substrings_count)++;
     }
 }
-
-// Функция для поиска подстроки, содержащей наибольшее число цифр
 char* find_substring_with_max_digits(char **substrings, int substrings_count) {
     char *max_digits_substring = NULL;
     int max_digits_count = 0;
@@ -56,8 +50,6 @@ char* find_substring_with_max_digits(char **substrings, int substrings_count) {
 
     return max_digits_substring;
 }
-
-// Функция для преобразования исходной строки, вставляя '0' после каждой '1'
 void transform_string(char *str) {
     int len = strlen(str);
     int new_len = len;
@@ -87,7 +79,7 @@ int main() {
     int k;
     printf("Введите количество строк: ");
     scanf("%d", &k);
-    getchar(); // Считываем символ новой строки после ввода числа
+    getchar();
 
     if (k <= 0) {
         printf("Неверный ввод данных\n");
@@ -99,7 +91,7 @@ int main() {
         strings[i] = (char*)malloc(MAX_STRING_LENGTH * sizeof(char));
         printf("Введите строку %d: ", i + 1);
         fgets(strings[i], MAX_STRING_LENGTH, stdin);
-        strings[i][strcspn(strings[i], "\n")] = '\0'; // Удаляем символ новой строки
+        strings[i][strcspn(strings[i], "\n")] = '\0'; 
     }
 
     for (int i = 0; i < k; i++) {
