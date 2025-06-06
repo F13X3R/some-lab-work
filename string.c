@@ -1,10 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+include <stdio.h>
+include <stdlib.h>
+include <string.h>
+include <ctype.h>
 
-#define MAX_STRING_LENGTH 1000
-#define MAX_SUBSTRINGS 100
+define MAX_STRING_LENGTH 1000
+define MAX_SUBSTRINGS 100
 int is_latin_digit_or_space(char c) {
     return (isalnum(c) || c == ' ');
 }
